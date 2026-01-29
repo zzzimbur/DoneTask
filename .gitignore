@@ -1,0 +1,14 @@
+.dart_tool/
+.idea/
+android/
+ios/
+linux/
+macos/
+web/
+windows/
+.metadata
+analysis_options.yaml
+done_task.iml
+index.html
+pubspec.lock
+pubspec.yaml
