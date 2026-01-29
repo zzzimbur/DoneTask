@@ -13,3 +13,6 @@ index.html
 pubspec.lock
 pubspec.yaml
 .flutter-plugins-dependencies
+build/
+assets/
+devtools_options.yaml

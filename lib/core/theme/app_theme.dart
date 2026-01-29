@@ -1,8 +1,8 @@
 // ============================================================================
-// ФАЙЛ: APP THEME - ГЛОБАЛЬНАЯ ТЕМА ПРИЛОЖЕНИЯ
+// ФАЙЛ: APP THEME - СОВРЕМЕННАЯ ТЕМА С УЧЕТОМ ПЛАТФОРМЫ
 // ============================================================================
-// ОТВЕЧАЕТ ЗА: Настройку всех глобальных стилей, цветов, шрифтов
-//              и внешнего вида виджетов
+// ОТВЕЧАЕТ ЗА: Создание адаптивной темы под iOS и Android
+//              с использованием системных стилей и шрифтов
 // ============================================================================
 
 import 'package:flutter/material.dart';
@@ -25,42 +25,14 @@ class AppTheme {
       onBackground: AppColors.textPrimary,
       onSurface: AppColors.textPrimary,
       onError: Colors.white,
-      outline: AppColors.outline,
     ),
     scaffoldBackgroundColor: AppColors.background,
-    appBarTheme: const AppBarTheme(
+    appBarTheme: AppBarTheme(
       backgroundColor: AppColors.surface,
       foregroundColor: AppColors.textPrimary,
       elevation: 0,
-      centerTitle: true,
-      titleTextStyle: TextStyle(
-        fontSize: 18,
-        fontWeight: FontWeight.w600,
-        color: AppColors.textPrimary,
-      ),
     ),
     textTheme: AppTextStyles.textTheme,
-    inputDecorationTheme: InputDecorationTheme(
-      filled: true,
-      fillColor: AppColors.surfaceLight,
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(AppConstants.borderRadiusLg),
-        borderSide: BorderSide.none,
-      ),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(AppConstants.borderRadiusLg),
-        borderSide: BorderSide(color: AppColors.outline, width: 1),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(AppConstants.borderRadiusLg),
-        borderSide: BorderSide(color: AppColors.primary, width: 2),
-      ),
-      contentPadding: const EdgeInsets.symmetric(
-        horizontal: AppConstants.spacingMd,
-        vertical: AppConstants.spacingSm,
-      ),
-      hintStyle: AppTextStyles.bodyMedium.copyWith(color: AppColors.textSecondary),
-    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(AppColors.primary),
@@ -76,22 +48,8 @@ class AppTheme {
             borderRadius: BorderRadius.circular(AppConstants.borderRadiusMd),
           ),
         ),
-        elevation: MaterialStateProperty.all(2),
+        elevation: MaterialStateProperty.all(0),
       ),
-    ),
-    // Исправляем ошибку - используем CardThemeData вместо CardTheme
-    cardTheme: CardThemeData(
-      color: AppColors.surface,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(AppConstants.borderRadiusLg)),
-      ),
-      elevation: 2,
-      margin: EdgeInsets.zero,
-    ),
-    dividerTheme: const DividerThemeData(
-      color: AppColors.divider,
-      thickness: 1,
-      space: 0,
     ),
     useMaterial3: true,
   );
